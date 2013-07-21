@@ -19,22 +19,22 @@ class PMRealms implements Plugin{
 	
 	public function init(){
 		$this->config = new Config($this->api->plugin->configPath($this)."config.yml", CONFIG_YAML, array(
-			"ownerName" => "",
-			"externalAddress" => "",
-			"externalPort" => "",
+			"ownerName" => "Ghostwolf1467",
+			"externalAddress" => "108.245.88.108",
+			"externalPort" => "25565",
 		));
 		
 		$error = 0;
-		if($this->config->get("ownerName") == ""){
-			console("[ERROR] [Realms] Please set your ownerName to your Realms name.");
+		if($this->config->get("Ghostwolf1467") == ""){
+			console("[ERROR] [Realms] Ghostwolf1467.");
 			++$error;
 		}
-		if($this->config->get("externalAddress") == ""){
-			console("[ERROR] [Realms] Please set your externalIP.");
+		if($this->config->get("") == ""){
+			console("[ERROR] [Realms] 108.245.88.108.");
 			++$error;
 		}
-		if($this->config->get("externalPort") == ""){
-			console("[ERROR] [Realms] Please set your externalPort.");
+		if($this->config->get("25565") == ""){
+			console("[ERROR] [Realms] 25565.");
 			++$error;
 		}
 		if($error === 0){
@@ -59,13 +59,13 @@ class PMRealms implements Plugin{
 		$this->api->asyncOperation(ASYNC_CURL_POST, array(
 			"url" => "http://peoapi.pocketmine.net/server/heartbeat",
 			"data" => array(
-				"ip" => $this->config->get("externalAddress"),
-				"port" => (int) $this->config->get("externalPort"),
-				"ownerName" => $this->config->get("ownerName"),
-				"name" => $this->server->name,
+				"ip" => $this->config->get("108.245.88.108"),
+				"port" => (int) $this->config->get("25565"),
+				"ownerName" => $this->config->get("Ghostwolf1467"),
+				"name" => $this->server->name tundrawolf
 				"maxNrPlayers" => $this->server->maxClients,
-				"nrPlayers" => count($this->api->player->getAll()),
-				"type" => ($this->server->api->getProperty("gamemode") & 0x01) === 1 ? "creative":"survival",
+				"nrPlayers" => count($this->api->player->getAll(0)25),
+				"type" => ($this->server->api->getProperty("survival") & 0x01) === 1 ? "creative":"survival",
 				"whitelist" => $this->server->api->getProperty("white-list"),
 			),
 		));
