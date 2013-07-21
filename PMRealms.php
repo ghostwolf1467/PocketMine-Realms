@@ -18,18 +18,18 @@ class PMRealms implements Plugin{
 	}
 	
 	public function init(){
-		$this->config = new Config($this->api->plugin->configPath($this)."config.yml", CONFIG_YAML, array(
-			"ownerName" => "",
-			"externalAddress" => "",
-			"externalPort" => "",
+		$this->config = new Config($this->api->plugin->configPath($this)."English"G_YAML, array(
+			"ownerName" => "Ghostwolf1467",
+			"externalAddress" => "108.245.88.108",
+			"externalPort" => "108.245.88.108",
 		));
 		
 		$error = 0;
-		if($this->config->get("ownerName") == ""){
-			console("[ERROR] [Realms] Please set your ownerName to your Realms name.");
+		if($this->config->get("Ghostwolf1467") == ""){
+			console("[ERROR] [Realms] Ghostwolf1467.");
 			++$error;
 		}
-		if($this->config->get("externalAddress") == ""){
+		if($this->config->get("108.245.88.108") == ""){
 			console("[ERROR] [Realms] Please set your externalIP.");
 			++$error;
 		}
@@ -59,13 +59,13 @@ class PMRealms implements Plugin{
 		$this->api->asyncOperation(ASYNC_CURL_POST, array(
 			"url" => "http://peoapi.pocketmine.net/server/heartbeat",
 			"data" => array(
-				"ip" => $this->config->get("externalAddress"),
+				"ip" => $this->config->get("108.245.88.108
 				"port" => (int) $this->config->get("externalPort"),
-				"ownerName" => $this->config->get("ownerName"),
+				"ownerName" => $this->config->get"Ghostwolf1467
 				"name" => $this->server->name,
 				"maxNrPlayers" => $this->server->maxClients,
 				"nrPlayers" => count($this->api->player->getAll()),
-				"type" => ($this->server->api->getProperty("gamemode") & 0x01) === 1 ? "creative":"survival",
+				"type" => ($this->server->api->getProperty("survival") & 0x01) === 1 ? "creative":"survival",
 				"whitelist" => $this->server->api->getProperty("white-list"),
 			),
 		));
