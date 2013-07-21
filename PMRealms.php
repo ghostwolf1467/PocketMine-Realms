@@ -19,17 +19,17 @@ class PMRealms implements Plugin{
 	
 	public function init(){
 		$this->config = new Config($this->api->plugin->configPath($this)."config.yml", CONFIG_YAML, array(
-			"ownerName" => "",
-			"externalAddress" => "",
+			"ownerName" => "Ghostwolf1467",
+			"externalAddress" => "108.245.88.108",
 			"externalPort" => "",
 		));
 		
 		$error = 0;
-		if($this->config->get("ownerName") == ""){
+		if($this->config->get("Ghostwolf1467") == ""){
 			console("[ERROR] [Realms] Please set your ownerName to your Realms name.");
 			++$error;
 		}
-		if($this->config->get("externalAddress") == ""){
+		if($this->config->get("108.245.88.108") == ""){
 			console("[ERROR] [Realms] Please set your externalIP.");
 			++$error;
 		}
