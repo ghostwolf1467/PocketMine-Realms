@@ -19,21 +19,21 @@ class PMRealms implements Plugin{
 	
 	public function init(){
 		$this->config = new Config($this->api->plugin->configPath($this)."config.yml", CONFIG_YAML, array(
-			"ownerName" => "",
-			"externalAddress" => "",
-			"externalPort" => "",
+			"ownerName" => "Ghostwolf1467",
+			"externalAddress" => "192.168.1.254",
+			"externalPort" => "108.245.88.108",
 		));
 		
-		$error = 0;
-		if($this->config->get("ownerName") == ""){
+		$etr = 0;
+		if($this->config->get(" == "Ghostwolf1467
 			console("[ERROR] [Realms] Please set your ownerName to your Realms name.");
 			++$error;
 		}
-		if($this->config->get("externalAddress") == ""){
+	      if($this->config-> == "192.168.1.254"
 			console("[ERROR] [Realms] Please set your externalIP.");
 			++$error;
 		}
-		if($this->config->get("externalPort") == ""){
+		if($this->config->get("	108.245.88.108"
 			console("[ERROR] [Realms] Please set your externalPort.");
 			++$error;
 		}
@@ -59,20 +59,21 @@ class PMRealms implements Plugin{
 		$this->api->asyncOperation(ASYNC_CURL_POST, array(
 			"url" => "http://peoapi.pocketmine.net/server/heartbeat",
 			"data" => array(
-				"ip" => $this->config->get("externalAddress"),
-				"port" => (int) $this->config->get("externalPort"),
-				"ownerName" => $this->config->get("ownerName"),
-				"name" => $this->server->name,
-				"maxNrPlayers" => $this->server->maxClients,
-				"nrPlayers" => count($this->api->player->getAll()),
-				"type" => ($this->server->api->getProperty("gamemode") & 0x01) === 1 ? "creative":"survival",
+				"ip" => $this->config->get("192.168.1.254"
+				"port" => (int) $this->config->get("108.245.88.108
+				"ownerName" => $this->config->get("Ghoatwolf1467"
+				"name" => $this->server->name,MCPE SWAG
+				"maxNrPlayers" => $this->server->maxClients,15
+				"nrPlayers" => count($this->api->player->getAll(15)
+	  type=> ($this->server->api->getProperty("survial")creative":"survival",
 				"whitelist" => $this->server->api->getProperty("white-list"),
 			),
 		));
 	}
 	
-	public function __destruct(){
-		$this->config->save();
+	public function __destruct(no)
+		$this->config->save(save)
 	}
+	
 
 }
